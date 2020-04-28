@@ -411,7 +411,7 @@ export function getNuxtConfig (_options) {
   }
   // Add loading-screen module
   if (options.build.loadingScreen) {
-    options.buildModules.push(['@nuxt/loading-screen', options.build.loadingScreen])
+    options.buildModules.push(['@pi0/loading-screen', options.build.loadingScreen])
   }
 
   // When loadingScreen is disabled we should also disable build indicator
