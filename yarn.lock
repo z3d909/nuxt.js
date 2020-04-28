@@ -1827,16 +1827,6 @@
     error-stack-parser "^2.0.0"
     string-width "^2.0.0"
 
-"@nuxt/loading-screen@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@nuxt/loading-screen/-/loading-screen-1.2.0.tgz#9cfab1e5e421bbaedadb26f7f27a68bcde313c24"
-  integrity sha512-l7nXgwkuX2/lDxEDAyIe3013MS8Jhja29uDVka21gyEbRnL68XOkoV3ws4dkk6QfhT2bcPwtu2C8tYvAhhhUzA==
-  dependencies:
-    connect "^3.7.0"
-    fs-extra "^8.1.0"
-    node-res "^5.0.1"
-    serve-static "^1.14.1"
-
 "@nuxt/opencollective@^0.3.0":
   version "0.3.0"
   resolved "https://registry.npmjs.org/@nuxt/opencollective/-/opencollective-0.3.0.tgz#11d8944dcf2d526e31660bb69570be03f8fb72b7"
@@ -1970,6 +1960,16 @@
   integrity sha512-LRLR1tjbcCfAmUElvTmMvLEzstpx6Xt/aQVTg2xvd+kHA2Ekp1eWl5t+gU7bcwjXHYEAzh4hH4WH+kS3vh+wRw==
   dependencies:
     "@types/node" ">= 8"
+
+"@pi0/loading-screen@^2.0.0-testing":
+  version "2.0.0-testing"
+  resolved "https://registry.npmjs.org/@pi0/loading-screen/-/loading-screen-2.0.0-testing.tgz#0926deb754df3bc2ad1dd94076af2703b6623de7"
+  integrity sha512-Vov0Jt6tJkFORtCQMtbCu3U8lCYV317glx5zj2qNda8dQkwgkhD90U/bAt+oNrlH3iobV8Et3eIGXgFKQtj+8A==
+  dependencies:
+    connect "^3.7.0"
+    fs-extra "^8.1.0"
+    node-res "^5.0.1"
+    serve-static "^1.14.1"
 
 "@rollup/plugin-alias@^3.1.0":
   version "3.1.0"
