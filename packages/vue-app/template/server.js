@@ -12,6 +12,7 @@ import {
 <% if (features.fetch) { %>import fetchMixin from './mixins/fetch.server'<% } %>
 import { createApp<% if (features.layouts) { %>, NuxtError<% } %> } from './index.js'
 import NuxtLink from './components/nuxt-link.server.js' // should be included after ./index.js
+import runtimeConfig from './config'
 
 <% if (features.fetch) { %>
 // Update serverPrefetch strategy
@@ -74,9 +75,9 @@ export default async (ssrContext) => {
   // Nuxt object (window{{globals.context}}, defaults to window.__NUXT__)
   ssrContext.nuxt = { <% if (features.layouts) { %>layout: 'default', <% } %>data: [], <% if (features.fetch) { %>fetch: [], <% } %>error: null<%= (store ? ', state: null' : '') %>, serverRendered: true, routePath: '' }
   // Public runtime config
-  ssrContext.nuxt.config = ssrContext.runtimeConfig.public
+  ssrContext.nuxt.config = { public: runtimeConfig.public }
   // Create the app definition and the instance (created for each request)
-  const { app, router<%= (store ? ', store' : '') %> } = await createApp(ssrContext, { ...ssrContext.runtimeConfig.public, ...ssrContext.runtimeConfig.server })
+  const { app, router<%= (store ? ', store' : '') %> } = await createApp(ssrContext)
   const _app = new Vue(app)
   // Add ssr route path to nuxt context so we can account for page navigation between ssr and csr
   ssrContext.nuxt.routePath = app.context.route.path

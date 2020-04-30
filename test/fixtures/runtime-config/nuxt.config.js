@@ -1,6 +1,9 @@
 const prefix = process.env.PREFIX || ''
 
 export default {
+  plugins: [
+    '~/plugins/log-config'
+  ],
   runtimeConfig: {
     server: {
       secret: prefix + '123',

@@ -2,6 +2,7 @@ import Vue from 'vue'
 <% if (features.meta) { %>import Meta from 'vue-meta'<% } %>
 <% if (features.componentClientOnly) { %>import ClientOnly from 'vue-client-only'<% } %>
 <% if (features.deprecations) { %>import NoSsr from 'vue-no-ssr'<% } %>
+import config from './config'
 import { createRouter } from './router.js'
 import NuxtChild from './components/nuxt-child.js'
 import NuxtError from '<%= components.ErrorPage ? components.ErrorPage : "./components/nuxt-error.vue" %>'
@@ -66,7 +67,7 @@ const defaultTransition = <%=
 %><%= isTest ? '// eslint-disable-line' : '' %>
 <% } %>
 
-async function createApp(ssrContext, config = {}) {
+async function createApp(ssrContext) {
   const router = await createRouter(ssrContext)
 
   <% if (store) { %>

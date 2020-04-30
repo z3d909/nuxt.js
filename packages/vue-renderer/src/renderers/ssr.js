@@ -48,6 +48,12 @@ export default class SSRRenderer extends BaseRenderer {
   }
 
   createRenderer () {
+    // Inject process.NUXT_RUNTIME_CONFIG for SSR
+    process.NUXT_RUNTIME_CONFIG = {
+      public: Object.freeze(this.options.runtimeConfig.public),
+      server: Object.freeze(this.options.runtimeConfig.server)
+    }
+
     // Create bundle renderer for SSR
     return createBundleRenderer(
       this.serverContext.resources.serverManifest,
