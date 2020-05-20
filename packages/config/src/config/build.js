@@ -14,8 +14,8 @@ export default () => ({
   serverURLPolyfill: 'url',
   filenames: {
     // { isDev, isClient, isServer }
-    app: ({ isDev, isModern }) => isDev ? `${isModern ? 'modern-' : ''}[name].js` : '[contenthash].js',
-    chunk: ({ isDev, isModern }) => isDev ? `${isModern ? 'modern-' : ''}[name].js` : '[contenthash].js',
+    app: ({ isDev, isModern }) => isDev ? `${isModern ? 'modern-' : ''}[name].js` : '[name].[contenthash].js',
+    chunk: ({ isDev, isModern }) => isDev ? `${isModern ? 'modern-' : ''}[name].js` : '[name].[contenthash].js',
     css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
     img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]',
     font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]',
